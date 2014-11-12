@@ -17,4 +17,16 @@ public:
     void windowResized(int w, int h);
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
+    
+    
+    
+    ofImage myImage;
+    
+    int xPositionOfSprite;
+    
+    int i = 0;
+    int j = 0;
+    int incrementAmount = 600;
+    int numberOfFrames = 6;
+    
 };
