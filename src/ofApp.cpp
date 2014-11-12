@@ -1,4 +1,5 @@
 #include "ofApp.h"
+#include "animatedGif.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
