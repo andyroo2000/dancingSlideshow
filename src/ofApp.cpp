@@ -1,11 +1,10 @@
 #include "ofApp.h"
-#include "animatedGif.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    myImage.loadImage("images/png-sprite-sheet.png");
-    xPositionOfSprite = 0;
+//    myImage.loadImage("images/png-sprite-sheet.png");
+//    xPositionOfSprite = 0;
     
     
 
@@ -13,23 +12,25 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    i++;
-    
-    if (i % 20 == 0) {
-        if (i > 120) {
-            i = 0;
-        }
-        
-        xPositionOfSprite += incrementAmount;
-        
-        if (xPositionOfSprite >= incrementAmount * numberOfFrames) {
-            xPositionOfSprite = 0;
-        }
-        
-    }
+//    i++;
+//    
+//    if (i % 20 == 0) {
+//        if (i > 120) {
+//            i = 0;
+//        }
+//        
+//        xPositionOfSprite += incrementAmount;
+//        
+//        if (xPositionOfSprite >= incrementAmount * numberOfFrames) {
+//            xPositionOfSprite = 0;
+//        }
+//        
+//    }
     
 //    cout << i << '\n';
 //    cout << xPositionOfSprite << '\n';
+    
+    myGif.update();
 
 }
 
@@ -39,8 +40,9 @@ void ofApp::draw(){
     
 //    myImage.resize(400, 400);
     
+    myGif.draw();
     
-    myImage.drawSubsection(0, 0, 600, 600, xPositionOfSprite, 0);  // draw first frame
+//    myImage.drawSubsection(0, 0, 600, 600, xPositionOfSprite, 0);  // draw first frame
 //    myImage.drawSubsection(0, 0, 600, 600, 0, 0);  // draw first frame
 //    myImage.drawSubsection(0, 0, 600, 600, 600, 0);  // draw second frame
 //    myImage.drawSubsection(0, 0, 600, 600, 1200, 0);  // draw third frame

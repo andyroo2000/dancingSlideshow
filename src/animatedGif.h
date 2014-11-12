@@ -20,11 +20,18 @@ public: // place public functions or variables declarations here
     void update();  // update method, used to refresh your objects properties
     void draw();    // draw method, this where you'll do the object's drawing
     
-    // variables
-    float x;      // position
-    float y;
-    float speedY; // speed and direction
-    float speedX;
+    
+    // from animated gif
+    ofImage myImage;
+    
+    int xPositionOfSprite;
+    
+    int i;
+    int j;
+    int incrementAmount;
+    int numberOfFrames;
+    
+    
     
     animatedGif(); // constructor - used to initialize an object, if no properties are passed
     //               the program sets them to the default value
