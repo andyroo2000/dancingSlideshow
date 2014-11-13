@@ -9,27 +9,15 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    
-    gif[0]->update();
+    updateAllGifs();
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBackground(0, 0, 0);
-    
-//    myImage.resize(400, 400);
-    
-    gif[0]->draw();
-    
-//    myImage.drawSubsection(0, 0, 600, 600, xPositionOfSprite, 0);  // draw first frame
-//    myImage.drawSubsection(0, 0, 600, 600, 0, 0);  // draw first frame
-//    myImage.drawSubsection(0, 0, 600, 600, 600, 0);  // draw second frame
-//    myImage.drawSubsection(0, 0, 600, 600, 1200, 0);  // draw third frame
-//    myImage.drawSubsection(0, 0, 600, 600, 1800, 0);  // draw fourth frame
-//    myImage.drawSubsection(0, 0, 600, 600, 2400, 0);  // draw fifth frame
-//    myImage.drawSubsection(0, 0, 600, 600, 3000, 0);  // draw sixth frame
-    
+    drawAllGifs();
+
 }
 
 //--------------------------------------------------------------
@@ -79,3 +67,20 @@ void ofApp::gotMessage(ofMessage msg){
 void ofApp::dragEvent(ofDragInfo dragInfo){
     
 }
+
+//--------------------------------------------------------------
+void ofApp::drawAllGifs() {
+    // run draw function on each gif instance
+    for (int i = 0; i < numOfImages; i++){
+        gif[i]->draw();
+    }
+}
+
+//--------------------------------------------------------------
+void ofApp::updateAllGifs() {
+    // run draw function on each gif instance
+    for (int i = 0; i < numOfImages; i++){
+        gif[i]->update();
+    }
+}
+

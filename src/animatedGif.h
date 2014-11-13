@@ -1,10 +1,5 @@
-//
 //  animatedGif.h
 //  slideshowDancing
-//
-//  Created by Andrew Landry on 11/12/14.
-//
-//
 
 #ifndef __slideshowDancing__animatedGif__
 #define __slideshowDancing__animatedGif__

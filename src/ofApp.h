@@ -19,9 +19,10 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
+    void drawAllGifs();
+    void updateAllGifs();
     
-//    AnimatedGif myGif;
-//    myGif = new animatedGif("test");
+    int numOfImages = 1;
     
 private:
     AnimatedGif *gif[43];
