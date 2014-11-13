@@ -30,17 +30,10 @@ public: // place public functions or variables declarations here
     int savedTime = 0;
     int totalTime = 1;
     
-
-    
-    
     void setValueX(int _x);
     
-    
-    
-    AnimatedGif(string _imagePath, float _x, float _y); // constructor - used to initialize an object, if no properties are passed
-    //               the program sets them to the default value
-    
-
+    // constructor
+    AnimatedGif(string _imagePath, float _x, float _y);
     
 private: // place private functions or variables declarations here
 };
