@@ -22,8 +22,8 @@ public:
     void drawAllGifs();
     void updateAllGifs();
     
-    int numOfImages = 2;
+    int numOfImages = 7;
     
 private:
-    AnimatedGif *gif[2];
+    AnimatedGif *gif[7];
 };

@@ -5,19 +5,14 @@
 
 AnimatedGif::AnimatedGif(string _imagePath, float _x, float _y)
 {
-//    myImage.loadImage("images/png-sprite-sheet.png");
-    string imagePath = _imagePath;
-    float x = _x;
-    float y = _y;
-
-    myImage.loadImage(imagePath);
+    x = _x;
+    y = _y;
+    myImage.loadImage(_imagePath);
     
 }
 
 void AnimatedGif::update() {
     i++;
-    
-    // cout << i << '\n';
     
     if (i % 20 == 0) {
         if (i > 120) {
@@ -25,8 +20,6 @@ void AnimatedGif::update() {
         }
         
         xPositionOfSprite += incrementAmount;
-        
-        // cout << "xPositionOfSprite: " << xPositionOfSprite << '\n';
         
         if (xPositionOfSprite >= incrementAmount * numberOfFrames) {
             xPositionOfSprite = 0;
