@@ -29,8 +29,8 @@ public:
     int numOfImages = 0;
     int numOfImagesToDisplay = 7;
     
-    float screenHeight = 0;
-    float screenWidth = 0;
+    float screenVerticalCenter = 0;
+    float screenHorizontalCenter = 0;
     
     ofDirectory imageDirectory;
     
