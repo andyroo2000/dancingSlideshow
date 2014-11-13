@@ -33,7 +33,7 @@ void AnimatedGif::update() {
     int passedTime2 = currentTime - savedTime2;
     
     if (passedTime2 > totaltime2) {
-        getPercentOfNumber(x, 101);
+//        updateValueByPercentage(x, 101);
 
 //        x--;
 //        y--;
@@ -43,6 +43,10 @@ void AnimatedGif::update() {
 //        yPositionOfSprite--;
 //        sourceWidth--;
 //        sourceHeight--;
+        
+        scaleGif(90);  // parameter is a percentage to scale the gif each time this is run
+        
+        
         savedTime2 = currentTime;
         
     }
@@ -68,7 +72,37 @@ void AnimatedGif::setDrawSubsectionParameters(float _x, float _y, float _w, floa
 }
 
 
-void AnimatedGif::getPercentOfNumber(float &_number, float _percentage) {
-//    return _number * (_percentage * .01);
+void AnimatedGif::updateValueByPercentage(float &_number, float _percentage) {
     _number = _number * (_percentage * .01);
 }
+
+void AnimatedGif::scaleGif(float _percentage) {
+    
+    float percentageValueForX = _percentage;
+    
+//    cout << "SourceHeight: " << sourceHeight << '\n';
+//    cout << "SourceWidth: " << sourceWidth << '\n';
+    
+    // scale size of source
+    sourceWidth *= _percentage * .01;
+    sourceHeight *= _percentage * .01;
+    int intSourceWidth = sourceHeight;  // convert to int for resize
+    int intSourceHeight = sourceWidth;  // convert to int for resize
+
+    intSourceWidth = sourceWidth * 6;
+    intSourceHeight = sourceHeight;
+    
+    // scale the rest of the parameters
+    updateValueByPercentage(w, _percentage);
+    updateValueByPercentage(h, _percentage);
+    updateValueByPercentage(xPositionOfSprite, percentageValueForX);
+    updateValueByPercentage(yPositionOfSprite, _percentage);
+
+    // scale the actual image
+    myImage.resize(intSourceWidth, intSourceHeight);
+
+
+}
+
+
+

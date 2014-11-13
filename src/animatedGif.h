@@ -18,7 +18,8 @@ public:
     void setImagePath(string _imagePath);
     void setDrawSubsectionParameters(float _x, float _y, float _w, float _h, float _xPositionOfSprite, float _yPositionOfSprite, float _sourceWidth, float _sourceHeight);
     
-    void getPercentOfNumber(float &_number, float _percentage);
+    void updateValueByPercentage(float &_number, float _percentage);
+    void scaleGif(float _percentage);
     
     // variables
     ofImage myImage;  // variable in object to load each spritesheet
@@ -43,7 +44,7 @@ public:
     
     // timer 2 variables
     int savedTime2 = 0;
-    int totaltime2= 1000;
+    int totaltime2= 3000;       // time between each frame that scales and moves the image backward
     int currentTime2 = 0;
     
     
