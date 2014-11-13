@@ -8,9 +8,12 @@
 
 #include "animatedGif.h"
 
-AnimatedGif::AnimatedGif()
+AnimatedGif::AnimatedGif(string _imagePath)
 {
-    myImage.loadImage("images/png-sprite-sheet.png");
+//    myImage.loadImage("images/png-sprite-sheet.png");
+    string imagePath = _imagePath;
+
+    myImage.loadImage(imagePath);
     
 }
 
@@ -38,3 +41,4 @@ void AnimatedGif::update() {
 void AnimatedGif::draw() {
     myImage.drawSubsection(0, 0, 600, 600, xPositionOfSprite, 0);  // draw first frame
 }
+

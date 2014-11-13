@@ -31,14 +31,16 @@ public: // place public functions or variables declarations here
     int numberOfFrames = 6;
     
     
+    void setValueX(int _x);
     
     
     
-    AnimatedGif(); // constructor - used to initialize an object, if no properties are passed
+    AnimatedGif(string _imagePath); // constructor - used to initialize an object, if no properties are passed
     //               the program sets them to the default value
     
-private: // place private functions or variables declarations here
+
     
+private: // place private functions or variables declarations here
 };
 
 

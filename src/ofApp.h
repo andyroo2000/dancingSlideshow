@@ -20,20 +20,9 @@ public:
     void gotMessage(ofMessage msg);
     
     
+//    AnimatedGif myGif;
+//    myGif = new animatedGif("test");
     
-//    ofImage myImage;
-//    
-//    int xPositionOfSprite;
-//    
-//    int i = 0;
-//    int j = 0;
-//    int incrementAmount = 600;
-//    int numberOfFrames = 6;
-    
-//    animatedGif myGif("images/png-sprite-sheet.png");
-//    animatedGif myGif(23);
-    
-    
-    AnimatedGif myGif;
-    
+private:
+    AnimatedGif *gif[43];
 };
