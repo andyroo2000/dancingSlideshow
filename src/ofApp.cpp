@@ -4,12 +4,12 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     gif[0] = new AnimatedGif("images/png-sprite-sheet.png", 0, 0);
-    gif[1] = new AnimatedGif("images/png-sprite-sheet-copy.png", 200, 600);
-    gif[2] = new AnimatedGif("images/png-sprite-sheet.png", 400, 200);
-    gif[3] = new AnimatedGif("images/png-sprite-sheet.png", 150, 400);
-    gif[4] = new AnimatedGif("images/png-sprite-sheet.png", 200, 600);
-    gif[5] = new AnimatedGif("images/png-sprite-sheet.png", 250, 800);
-    gif[6] = new AnimatedGif("images/png-sprite-sheet.png", 300, 1000);
+    gif[1] = new AnimatedGif("images/png-sprite-sheet-copy.png", 50, 0);
+    gif[2] = new AnimatedGif("images/png-sprite-sheet.png", 100, 0);
+    gif[3] = new AnimatedGif("images/png-sprite-sheet.png", 150, 0);
+    gif[4] = new AnimatedGif("images/png-sprite-sheet.png", 200, 0);
+    gif[5] = new AnimatedGif("images/png-sprite-sheet.png", 250, 0);
+    gif[6] = new AnimatedGif("images/png-sprite-sheet.png", 300, 0);
     
 }
 

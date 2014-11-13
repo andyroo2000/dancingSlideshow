@@ -12,6 +12,7 @@ class AnimatedGif {
 public: // place public functions or variables declarations here
     
     // methods, equivalent to specific functions of your class objects
+    void setup();
     void update();  // update method, used to refresh your objects properties
     void draw();    // draw method, this where you'll do the object's drawing
     
@@ -19,12 +20,17 @@ public: // place public functions or variables declarations here
     // from animated gif
     ofImage myImage;
     
-    int xPositionOfSprite;
+    int xPositionOfSprite = 0;
     
-    int i;
-    float x, y;
+    int i = 0;
+    float x = 0;
+    float y = 0;
     int incrementAmount = 600;
     int numberOfFrames = 6;
+    int savedTime = 0;
+    int totalTime = 1;
+    
+
     
     
     void setValueX(int _x);
