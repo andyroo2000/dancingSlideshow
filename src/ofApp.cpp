@@ -122,6 +122,11 @@ void ofApp::setNewRandomImage(int index) {
     
 }
 
+//--------------------------------------------------------------
+void ofApp::getPercentOfNumber(float _number, float _percentage) {
+    return _number * (_percentage * .01);
+}
+
 
 
 
