@@ -12,11 +12,13 @@ AnimatedGif::AnimatedGif(string _imagePath, float _x, float _y)
 }
 
 void AnimatedGif::setup() {
-    savedTime = ofGetSeconds();
+    currentTime = ofGetElapsedTimeMillis();
+    savedTime = currentTime;
 }
 
 void AnimatedGif::update() {
-    int passedTime = ofGetSeconds() - savedTime;
+    currentTime = ofGetElapsedTimeMillis();
+    int passedTime = currentTime - savedTime;
     
     if (passedTime > totalTime) {
         xPositionOfSprite += incrementAmount;
@@ -24,6 +26,9 @@ void AnimatedGif::update() {
         if (xPositionOfSprite >= incrementAmount * numberOfFrames) {
             xPositionOfSprite = 0;
         }
+        
+        savedTime = currentTime;
+        
     }
 }
 

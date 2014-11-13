@@ -16,19 +16,17 @@ public: // place public functions or variables declarations here
     void update();  // update method, used to refresh your objects properties
     void draw();    // draw method, this where you'll do the object's drawing
     
-    
-    // from animated gif
-    ofImage myImage;
+    ofImage myImage;  // variable in object to load each spritesheet
     
     int xPositionOfSprite = 0;
     
-    int i = 0;
-    float x = 0;
-    float y = 0;
-    int incrementAmount = 600;
-    int numberOfFrames = 6;
+    float x = 0;  // parameter - x-position of gif
+    float y = 0;  // parameter - y-position of gif
+    int incrementAmount = 600;  // size of offset for each image in spritesheet
+    int numberOfFrames = 6;  // number of frames in the gif
     int savedTime = 0;
-    int totalTime = 1;
+    int totalTime = 400;  // time for each frame of gif in milliseconds
+    int currentTime = 0;
     
     void setValueX(int _x);
     
