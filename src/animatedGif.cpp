@@ -39,5 +39,13 @@ void AnimatedGif::setImagePath(string _imagePath) {
     myImage.loadImage(_imagePath);
 }
 
-
-
+void AnimatedGif::setDrawSubsectionParameters(float _x, float _y, float _w, float _h, float _xPositionOfSprite, float _yPositionOfSprite, float _sourceWidth, float _sourceHeight) {
+    x = _x;
+    y = _y;
+    w = _w;
+    h = _h;
+    xPositionOfSprite = _xPositionOfSprite;
+    yPositionOfSprite = _yPositionOfSprite;
+    sourceHeight = _sourceHeight;
+    sourceWidth = _sourceWidth;
+}
