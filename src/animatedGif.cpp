@@ -28,11 +28,16 @@ void AnimatedGif::update() {
         }
         
         savedTime = currentTime;
-        
     }
 }
 
 void AnimatedGif::draw() {
-    myImage.drawSubsection(x, y, 600, 600, xPositionOfSprite, 0);  // draw first frame
+    myImage.drawSubsection(x, y, w, h, xPositionOfSprite, yPositionOfSprite, sourceWidth, sourceHeight);
 }
+
+void AnimatedGif::setImagePath(string _imagePath) {
+    myImage.loadImage(_imagePath);
+}
+
+
 

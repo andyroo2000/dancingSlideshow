@@ -109,3 +109,20 @@ void ofApp::getImagePaths() {
         imagePaths.push_back(imageDirectory.getPath(i));
     }
 }
+
+//--------------------------------------------------------------
+void ofApp::setNewRandomImage(int index) {
+    numOfImages = imageDirectory.listDir("images");
+    
+    for (int i = 0; i < numOfImages; i++) {
+        imagePaths.push_back(imageDirectory.getPath(i));
+    }
+    
+    gif[index]->setImagePath(imagePaths[ofRandom(numOfImages)]);
+    
+}
+
+
+
+
+

@@ -15,14 +15,25 @@ public:
     void update();
     void draw();
     void setValueX(int _x);
+    void setImagePath(string _imagePath);
     
     // variables
     ofImage myImage;  // variable in object to load each spritesheet
-    float x = 0;  // parameter - x-position of gif
-    float y = 0;  // parameter - y-position of gif
-    int xPositionOfSprite = 0;
-    int incrementAmount = 600;  // size of offset for each image in spritesheet
-    int numberOfFrames = 6;     // number of frames in the gif
+    
+    // draw gif parameters
+    float x = 0;                    // x-position of gif
+    float y = 0;                    // y-position of gif
+    float w = 600;                  // width of gif
+    float h = 600;                  // height of gif
+    int xPositionOfSprite = 0;      // x-position of source
+    int yPositionOfSprite = 0;      // y-position of source
+    float sourceWidth = 600;        // width of source
+    float sourceHeight = 600;       // height of source
+    
+    float incrementAmount = 600;  // size of offset for each image in spritesheet
+    int numberOfFrames = 6;       // number of frames in the gif
+    
+    // timer variables
     int savedTime = 0;
     int totalTime = 200;        // time for each frame of gif in milliseconds
     int currentTime = 0;

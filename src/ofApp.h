@@ -23,6 +23,7 @@ public:
     void drawAllGifs();
     void updateAllGifs();
     void getImagePaths();
+    void setNewRandomImage(int index);
     
     int numOfImages = 0;
     int numOfImagesToDisplay = 7;
