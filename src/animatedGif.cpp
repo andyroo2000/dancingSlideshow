@@ -49,3 +49,9 @@ void AnimatedGif::setDrawSubsectionParameters(float _x, float _y, float _w, floa
     sourceHeight = _sourceHeight;
     sourceWidth = _sourceWidth;
 }
+
+//--------------------------------------------------------------
+void AnimatedGif::getPercentOfNumber(float _number, float _percentage) {
+    return _number * (_percentage * .01);
+}
+

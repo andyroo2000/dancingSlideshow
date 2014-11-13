@@ -17,7 +17,7 @@ public:
     void setValueX(int _x);
     void setImagePath(string _imagePath);
     void setDrawSubsectionParameters(float _x, float _y, float _w, float _h, float _xPositionOfSprite, float _yPositionOfSprite, float _sourceWidth, float _sourceHeight);
-    
+    void getPercentOfNumber(float _number, float _percentage);
     
     // variables
     ofImage myImage;  // variable in object to load each spritesheet
