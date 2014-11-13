@@ -22,9 +22,9 @@ public:
     float y = 0;  // parameter - y-position of gif
     int xPositionOfSprite = 0;
     int incrementAmount = 600;  // size of offset for each image in spritesheet
-    int numberOfFrames = 6;  // number of frames in the gif
+    int numberOfFrames = 6;     // number of frames in the gif
     int savedTime = 0;
-    int totalTime = 200;  // time for each frame of gif in milliseconds
+    int totalTime = 200;        // time for each frame of gif in milliseconds
     int currentTime = 0;
     
     // constructor

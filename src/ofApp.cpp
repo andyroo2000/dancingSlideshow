@@ -11,6 +11,7 @@ void ofApp::setup(){
     gif[5] = new AnimatedGif("images/png-sprite-sheet.png", 250, 0);
     gif[6] = new AnimatedGif("images/png-sprite-sheet.png", 300, 0);
     
+    setupAllGifs();
 }
 
 //--------------------------------------------------------------
@@ -22,11 +23,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBackground(0, 0, 0);
-//    ofSetColor(255, 255, 255);
-    
     drawAllGifs();
-    
-
 }
 
 //--------------------------------------------------------------
@@ -78,12 +75,13 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 }
 
 //--------------------------------------------------------------
-void ofApp::drawAllGifs() {
-    // run draw function on each gif instance
+void ofApp::setupAllGifs() {
+    // run setup function on each gif instance
     for (int i = 0; i < numOfImages; i++){
-        gif[i]->draw();
+        gif[i]->setup();
     }
 }
+
 
 //--------------------------------------------------------------
 void ofApp::updateAllGifs() {
@@ -93,3 +91,10 @@ void ofApp::updateAllGifs() {
     }
 }
 
+//--------------------------------------------------------------
+void ofApp::drawAllGifs() {
+    // run draw function on each gif instance
+    for (int i = 0; i < numOfImages; i++){
+        gif[i]->draw();
+    }
+}

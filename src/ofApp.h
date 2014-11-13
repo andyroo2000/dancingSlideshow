@@ -19,6 +19,7 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
+    void setupAllGifs();
     void drawAllGifs();
     void updateAllGifs();
     
