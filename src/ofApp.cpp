@@ -7,6 +7,7 @@ void ofApp::setup(){
 //    xPositionOfSprite = 0;
     
     
+//    myGif = new animatedGif ("images/png-sprite-sheet.png");
 
 }
 

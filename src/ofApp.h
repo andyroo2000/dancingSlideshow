@@ -30,6 +30,10 @@ public:
 //    int incrementAmount = 600;
 //    int numberOfFrames = 6;
     
-    animatedGif myGif;
+//    animatedGif myGif("images/png-sprite-sheet.png");
+//    animatedGif myGif(23);
+    
+    
+    AnimatedGif myGif;
     
 };

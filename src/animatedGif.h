@@ -12,7 +12,7 @@
 #include "ofMain.h"
 
 
-class animatedGif {
+class AnimatedGif {
     
 public: // place public functions or variables declarations here
     
@@ -24,16 +24,17 @@ public: // place public functions or variables declarations here
     // from animated gif
     ofImage myImage;
     
-    int xPositionOfSprite;
+    int xPositionOfSprite = 0;
     
-    int i;
-    int j;
-    int incrementAmount;
-    int numberOfFrames;
-    
+    int i, j, x, y;
+    int incrementAmount = 600;
+    int numberOfFrames = 6;
     
     
-    animatedGif(); // constructor - used to initialize an object, if no properties are passed
+    
+    
+    
+    AnimatedGif(); // constructor - used to initialize an object, if no properties are passed
     //               the program sets them to the default value
     
 private: // place private functions or variables declarations here

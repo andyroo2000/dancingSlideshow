@@ -8,22 +8,16 @@
 
 #include "animatedGif.h"
 
-animatedGif::animatedGif()
+AnimatedGif::AnimatedGif()
 {
-    int i = 0;
-    int j = 0;
-    int incrementAmount = 600;
-    int numberOfFrames = 6;
-    
     myImage.loadImage("images/png-sprite-sheet.png");
-    xPositionOfSprite = 0;
     
 }
 
-void animatedGif::update() {
+void AnimatedGif::update() {
     i++;
     
-    cout << i << '\n';
+    // cout << i << '\n';
     
     if (i % 20 == 0) {
         if (i > 120) {
@@ -32,7 +26,7 @@ void animatedGif::update() {
         
         xPositionOfSprite += incrementAmount;
         
-        cout << "xPositionOfSprite: " << xPositionOfSprite << '\n';
+        // cout << "xPositionOfSprite: " << xPositionOfSprite << '\n';
         
         if (xPositionOfSprite >= incrementAmount * numberOfFrames) {
             xPositionOfSprite = 0;
@@ -41,6 +35,6 @@ void animatedGif::update() {
     }
 }
 
-void animatedGif::draw() {
+void AnimatedGif::draw() {
     myImage.drawSubsection(0, 0, 600, 600, xPositionOfSprite, 0);  // draw first frame
 }
