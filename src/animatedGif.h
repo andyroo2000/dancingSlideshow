@@ -17,7 +17,8 @@ public:
     void setValueX(int _x);
     void setImagePath(string _imagePath);
     void setDrawSubsectionParameters(float _x, float _y, float _w, float _h, float _xPositionOfSprite, float _yPositionOfSprite, float _sourceWidth, float _sourceHeight);
-    void getPercentOfNumber(float _number, float _percentage);
+    
+    void getPercentOfNumber(float &_number, float _percentage);
     
     // variables
     ofImage myImage;  // variable in object to load each spritesheet
@@ -39,6 +40,12 @@ public:
     int savedTime = 0;
     int totalTime = 200;        // time for each frame of gif in milliseconds
     int currentTime = 0;
+    
+    // timer 2 variables
+    int savedTime2 = 0;
+    int totaltime2= 1000;
+    int currentTime2 = 0;
+    
     
     // constructor
     AnimatedGif(string _imagePath, float _x, float _y);

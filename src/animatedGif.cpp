@@ -29,6 +29,23 @@ void AnimatedGif::update() {
         
         savedTime = currentTime;
     }
+    
+    int passedTime2 = currentTime - savedTime2;
+    
+    if (passedTime2 > totaltime2) {
+        getPercentOfNumber(x, 101);
+
+//        x--;
+//        y--;
+//        w--;
+//        h--;
+//        xPositionOfSprite--;
+//        yPositionOfSprite--;
+//        sourceWidth--;
+//        sourceHeight--;
+        savedTime2 = currentTime;
+        
+    }
 }
 
 void AnimatedGif::draw() {
@@ -50,8 +67,8 @@ void AnimatedGif::setDrawSubsectionParameters(float _x, float _y, float _w, floa
     sourceWidth = _sourceWidth;
 }
 
-//--------------------------------------------------------------
-void AnimatedGif::getPercentOfNumber(float _number, float _percentage) {
-    return _number * (_percentage * .01);
-}
 
+void AnimatedGif::getPercentOfNumber(float &_number, float _percentage) {
+//    return _number * (_percentage * .01);
+    _number = _number * (_percentage * .01);
+}

@@ -24,9 +24,13 @@ public:
     void updateAllGifs();
     void getImagePaths();
     void setNewRandomImage(int index);
+    void getPercentOfNumber(float _number, float _percentage);
     
     int numOfImages = 0;
     int numOfImagesToDisplay = 7;
+    
+    float screenHeight = 0;
+    float screenWidth = 0;
     
     ofDirectory imageDirectory;
     

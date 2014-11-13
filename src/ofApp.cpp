@@ -6,7 +6,14 @@ void ofApp::setup(){
     ofSeedRandom();
     getImagePaths();
     
-    gif[0] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], 0, 0);
+    ofSetRectMode(OF_RECTMODE_CENTER); //set rectangle mode to the center
+    screenWidth = ofGetScreenWidth() / 2;
+    screenHeight = ofGetScreenHeight() / 2;
+    
+    cout << screenWidth;
+    cout << screenHeight;
+    
+    gif[0] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], screenWidth, screenHeight);
     gif[1] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], 50, 0);
     gif[2] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], 100, 0);
     gif[3] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], 150, 0);
@@ -122,7 +129,10 @@ void ofApp::setNewRandomImage(int index) {
     
 }
 
-
+//--------------------------------------------------------------
+void ofApp::getPercentOfNumber(float _number, float _percentage) {
+    return _number * (_percentage * .01);
+}
 
 
 
