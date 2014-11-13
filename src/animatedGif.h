@@ -19,9 +19,10 @@ public: // place public functions or variables declarations here
     // from animated gif
     ofImage myImage;
     
-    int xPositionOfSprite = 0;
+    int xPositionOfSprite;
     
-    int i, j, x, y;
+    int i;
+    float x, y;
     int incrementAmount = 600;
     int numberOfFrames = 6;
     
@@ -30,7 +31,7 @@ public: // place public functions or variables declarations here
     
     
     
-    AnimatedGif(string _imagePath); // constructor - used to initialize an object, if no properties are passed
+    AnimatedGif(string _imagePath, float _x, float _y); // constructor - used to initialize an object, if no properties are passed
     //               the program sets them to the default value
     
 
