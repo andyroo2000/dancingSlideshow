@@ -3,15 +3,24 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    gif[0] = new AnimatedGif("images/png-sprite-sheet.png", 0, 0);
-    gif[1] = new AnimatedGif("images/png-sprite-sheet-copy.png", 50, 0);
-    gif[2] = new AnimatedGif("images/png-sprite-sheet.png", 100, 0);
-    gif[3] = new AnimatedGif("images/png-sprite-sheet.png", 150, 0);
-    gif[4] = new AnimatedGif("images/png-sprite-sheet.png", 200, 0);
-    gif[5] = new AnimatedGif("images/png-sprite-sheet.png", 250, 0);
-    gif[6] = new AnimatedGif("images/png-sprite-sheet.png", 300, 0);
+    getImagePaths();
+    
+    gif[0] = new AnimatedGif(imagePaths[0], 0, 0);
+    gif[1] = new AnimatedGif(imagePaths[1], 50, 0);
+    gif[2] = new AnimatedGif(imagePaths[0], 100, 0);
+    gif[3] = new AnimatedGif(imagePaths[1], 150, 0);
+    gif[4] = new AnimatedGif(imagePaths[0], 200, 0);
+    gif[5] = new AnimatedGif(imagePaths[1], 250, 0);
+    gif[6] = new AnimatedGif(imagePaths[0], 300, 0);
     
     setupAllGifs();
+    
+//    cout << imageDirectory.listDir("images") << '\n';
+//    
+//    cout << imageDirectory.getPath(0) << '\n';
+//    cout << imageDirectory.getPath(1) << '\n';
+    
+    
 }
 
 //--------------------------------------------------------------
@@ -77,7 +86,7 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 //--------------------------------------------------------------
 void ofApp::setupAllGifs() {
     // run setup function on each gif instance
-    for (int i = 0; i < numOfImages; i++){
+    for (int i = 0; i < numOfImagesToDisplay; i++){
         gif[i]->setup();
     }
 }
@@ -86,7 +95,7 @@ void ofApp::setupAllGifs() {
 //--------------------------------------------------------------
 void ofApp::updateAllGifs() {
     // run draw function on each gif instance
-    for (int i = 0; i < numOfImages; i++){
+    for (int i = 0; i < numOfImagesToDisplay; i++){
         gif[i]->update();
     }
 }
@@ -94,7 +103,24 @@ void ofApp::updateAllGifs() {
 //--------------------------------------------------------------
 void ofApp::drawAllGifs() {
     // run draw function on each gif instance
-    for (int i = 0; i < numOfImages; i++){
+    for (int i = 0; i < numOfImagesToDisplay; i++){
         gif[i]->draw();
     }
 }
+
+//--------------------------------------------------------------
+void ofApp::getImagePaths() {
+    
+    numOfImages = imageDirectory.listDir("images");
+    
+    for (int i = 0; i < numOfImages; i++) {
+        imagePaths.push_back(imageDirectory.getPath(i));
+    }
+}
+
+
+
+
+
+
+

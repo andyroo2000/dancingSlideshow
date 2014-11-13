@@ -22,8 +22,14 @@ public:
     void setupAllGifs();
     void drawAllGifs();
     void updateAllGifs();
+    void getImagePaths();
     
-    int numOfImages = 7;
+    int numOfImages = 0;
+    int numOfImagesToDisplay = 7;
+    
+    ofDirectory imageDirectory;
+    
+    vector<string>imagePaths;
     
 private:
     AnimatedGif *gif[7];
