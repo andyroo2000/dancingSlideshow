@@ -3,30 +3,23 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    ofSeedRandom();
     getImagePaths();
     
-    gif[0] = new AnimatedGif(imagePaths[0], 0, 0);
-    gif[1] = new AnimatedGif(imagePaths[1], 50, 0);
-    gif[2] = new AnimatedGif(imagePaths[0], 100, 0);
-    gif[3] = new AnimatedGif(imagePaths[1], 150, 0);
-    gif[4] = new AnimatedGif(imagePaths[0], 200, 0);
-    gif[5] = new AnimatedGif(imagePaths[1], 250, 0);
-    gif[6] = new AnimatedGif(imagePaths[0], 300, 0);
+    gif[0] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], 0, 0);
+    gif[1] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], 50, 0);
+    gif[2] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], 100, 0);
+    gif[3] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], 150, 0);
+    gif[4] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], 200, 0);
+    gif[5] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], 250, 0);
+    gif[6] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], 300, 0);
     
     setupAllGifs();
-    
-//    cout << imageDirectory.listDir("images") << '\n';
-//    
-//    cout << imageDirectory.getPath(0) << '\n';
-//    cout << imageDirectory.getPath(1) << '\n';
-    
-    
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     updateAllGifs();
-
 }
 
 //--------------------------------------------------------------
@@ -110,17 +103,9 @@ void ofApp::drawAllGifs() {
 
 //--------------------------------------------------------------
 void ofApp::getImagePaths() {
-    
     numOfImages = imageDirectory.listDir("images");
     
     for (int i = 0; i < numOfImages; i++) {
         imagePaths.push_back(imageDirectory.getPath(i));
     }
 }
-
-
-
-
-
-
-
