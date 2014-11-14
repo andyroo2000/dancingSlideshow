@@ -47,7 +47,8 @@ public:
     ofDirectory imageDirectory;
     
     vector<string>imagePaths;
-    vector<int>imageIndex;
+    deque<int> imageIndex;
+
     
 private:
     AnimatedGif *gif[16];

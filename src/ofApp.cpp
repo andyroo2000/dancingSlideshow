@@ -116,7 +116,8 @@ void ofApp::drawAllGifs() {
     // run draw function on each gif instance
     int imageIndexSize = imageIndex.size();
     for (int i = 0; i < imageIndexSize; i++){
-        gif[i]->draw();
+        // draw the gifs in the order of the deque so that the new images are always drawn on top of the older images
+        gif[imageIndex[i]]->draw();
     }
 }
 
@@ -158,7 +159,7 @@ void ofApp::launchNewImage() {
         if (countToMaxImages <= numOfImagesToDisplay) {
             countToMaxImages++;
         } else {
-            imageIndex.erase(imageIndex.begin());  // erase first spot in vector
+            imageIndex.pop_front();
         }
         
         if (index < indexUpperLimit) {
