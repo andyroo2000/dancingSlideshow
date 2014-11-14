@@ -84,22 +84,24 @@ void AnimatedGif::scaleGif(float _percentage) {
 //    cout << "SourceWidth: " << sourceWidth << '\n';
     
     // scale size of source
-    sourceWidth *= _percentage * .01;
-    sourceHeight *= _percentage * .01;
-    int intSourceWidth = sourceHeight;  // convert to int for resize
-    int intSourceHeight = sourceWidth;  // convert to int for resize
+    w *= _percentage * .01;
+    h *= _percentage * .01;
+    //int intSourceWidth = sourceWidth;  // convert to int for resize
+    //int intSourceHeight = sourceHeight;  // convert to int for resize
 
-    intSourceWidth = sourceWidth * 6;
-    intSourceHeight = sourceHeight;
-    
-    // scale the rest of the parameters
-    updateValueByPercentage(w, _percentage);
-    updateValueByPercentage(h, _percentage);
-    updateValueByPercentage(xPositionOfSprite, percentageValueForX);
-    updateValueByPercentage(yPositionOfSprite, _percentage);
+    //intSourceWidth = sourceWidth * 6;
+    //intSourceHeight = sourceHeight;
 
     // scale the actual image
-    myImage.resize(intSourceWidth, intSourceHeight);
+    //myImage.resize(intSourceWidth, intSourceHeight);
+
+    // scale the rest of the parameters
+    //updateValueByPercentage(w, _percentage);
+    //updateValueByPercentage(h, _percentage);
+    //updateValueByPercentage(xPositionOfSprite, percentageValueForX);
+    //updateValueByPercentage(yPositionOfSprite, _percentage);
+
+
 
 
 }
