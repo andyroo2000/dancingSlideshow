@@ -33,6 +33,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    launchNewImage();
     updateAllGifs();
 }
 
@@ -102,7 +103,8 @@ void ofApp::setupAllGifs() {
 //--------------------------------------------------------------
 void ofApp::updateAllGifs() {
     // run draw function on each gif instance
-    for (int i = 0; i < numOfImagesToDisplay; i++){
+    int imageIndexSize = imageIndex.size();
+    for (int i = 0; i < imageIndexSize; i++){
         gif[i]->update();
     }
 }
@@ -110,7 +112,8 @@ void ofApp::updateAllGifs() {
 //--------------------------------------------------------------
 void ofApp::drawAllGifs() {
     // run draw function on each gif instance
-    for (int i = 0; i < numOfImagesToDisplay; i++){
+    int imageIndexSize = imageIndex.size();
+    for (int i = 0; i < imageIndexSize; i++){
         gif[i]->draw();
     }
 }
@@ -136,7 +139,24 @@ void ofApp::setNewRandomImage(int index) {
     
 }
 
+//--------------------------------------------------------------
+void ofApp::launchNewImage() {
+    currentTimeMain = ofGetElapsedTimeMillis();
+    int passedTime = currentTimeMain - savedTimeMain;
 
+    if (passedTime > totalTimeMain) {
+        imageIndex.push_back(index);
+        
+        if (index < indexUpperLimit) {
+            index++;
+        } else {
+            index = 0;
+        }
+        savedTimeMain = currentTimeMain;
+    }
+
+    
+}
 
 
 

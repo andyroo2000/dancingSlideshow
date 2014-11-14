@@ -24,9 +24,19 @@ public:
     void updateAllGifs();
     void getImagePaths();
     void setNewRandomImage(int index);
+    void launchNewImage();
     
     int numOfImages = 0;
     int numOfImagesToDisplay = 14;
+    
+    
+    // timer variables
+    int savedTimeMain = 0;
+    int totalTimeMain = 2000;  // time to wait before launching a new image
+    int currentTimeMain = 0;
+    
+    int index = 0;
+    int indexUpperLimit = 15;
     
     float screenWidth = 0;
     float screenHeight = 0;
@@ -36,6 +46,7 @@ public:
     ofDirectory imageDirectory;
     
     vector<string>imagePaths;
+    vector<int>imageIndex;
     
 private:
     AnimatedGif *gif[14];

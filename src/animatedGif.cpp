@@ -17,7 +17,7 @@ void AnimatedGif::setup() {
     savedTime = currentTime;
     screenHorizontalCenter = ofGetScreenWidth() / 2;
     screenVerticalCenter = ofGetScreenHeight() / 2;
-    horizonLine = screenVerticalCenter - (.1 * ofGetScreenHeight());
+    horizonLine = screenVerticalCenter - (.15 * ofGetScreenHeight());
 }
 
 void AnimatedGif::update() {

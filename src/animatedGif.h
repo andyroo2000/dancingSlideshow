@@ -27,15 +27,15 @@ public:
     // draw gif parameters
     float x = 0;                    // x-position of gif
     float y = 0;                    // y-position of gif
-    float w = 2400;                  // width of gif
-    float h = 2400;                  // height of gif
-    float xPositionOfSprite = 0;      // x-position of source
-    float yPositionOfSprite = 0;      // y-position of source
+    float w = 2400;                 // width of gif
+    float h = 2400;                 // height of gif
+    float xPositionOfSprite = 0;    // x-position of source
+    float yPositionOfSprite = 0;    // y-position of source
     float sourceWidth = 600;        // width of source
     float sourceHeight = 600;       // height of source
     
-    float incrementAmount = 600;  // size of offset for each image in spritesheet
-    int numberOfFrames = 6;       // number of frames in the gif
+    float incrementAmount = 600;    // size of offset for each image in spritesheet
+    int numberOfFrames = 6;         // number of frames in the gif
     
     int screenVerticalCenter = 0;
     int screenHorizontalCenter = 0;
@@ -44,19 +44,19 @@ public:
     
     // timer variables
     int savedTime = 0;
-    int totalTime = 200;        // time for each frame of gif in milliseconds
+    int totalTime = 200;            // time for each frame of gif in milliseconds
     int currentTime = 0;
     
     // timer 2 variables
     int savedTime2 = 0;
-    int totaltime2= 5;       // time between each frame that scales and moves the image backward
+    int totaltime2= 5;              // time between each frame that scales and moves the image backward
     int currentTime2 = 0;
     
     
     // constructor
     AnimatedGif(string _imagePath, float _x, float _y);
     
-private: // place private functions or variables declarations here
+private:
 };
 
 
