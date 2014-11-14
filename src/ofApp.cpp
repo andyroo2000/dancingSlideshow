@@ -8,24 +8,25 @@ void ofApp::setup(){
     
     // Get the center point of the screen for placing new images
     ofSetRectMode(OF_RECTMODE_CENTER); //set rectangle mode to the center
-    screenVerticalCenter = ofGetScreenWidth() / 2;
-    screenHorizontalCenter = ofGetScreenHeight() / 2;
+    screenWidth = ofGetScreenWidth();
+    screenHeight = ofGetScreenHeight();
+    screenVerticalCenter = screenWidth / 2;
+    screenHorizontalCenter = screenHeight / 2;
     
-    gif[0] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[1] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[2] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[3] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[4] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[5] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[6] =new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[7] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[8] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[9] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[10] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[11] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[12] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
-    gif[13] =new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
- 
+    gif[0] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[1] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[2] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[3] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[4] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[5] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[6] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[7] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[8] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[9] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[10] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[11] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[12] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[13] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
     
     setupAllGifs();
 }
