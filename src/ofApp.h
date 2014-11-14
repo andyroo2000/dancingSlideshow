@@ -18,6 +18,7 @@ public:
     void windowResized(int w, int h);
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
+    void setupNewImages(int numberOfImages);
     
     void setupAllGifs();
     void drawAllGifs();
@@ -27,17 +28,17 @@ public:
     void launchNewImage();
     
     int numOfImages = 0;
-    int numOfImagesToDisplay = 14;
+    int numOfImagesToDisplay = 15;
     int countToMaxImages = 0;
     
     
     // timer variables
     int savedTimeMain = 0;
-    int totalTimeMain = 2000;  // time to wait before launching a new image
+    int totalTimeMain = 2500;  // time to wait before launching a new image
     int currentTimeMain = 0;
     
     int index = 0;
-    int indexUpperLimit = 14;
+    int indexUpperLimit = 15;
     
     float screenWidth = 0;
     float screenHeight = 0;
@@ -51,5 +52,5 @@ public:
 
     
 private:
-    AnimatedGif *gif[16];
+    AnimatedGif *gif[31];
 };

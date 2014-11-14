@@ -38,24 +38,34 @@ void AnimatedGif::update() {
     
     if (passedTime2 > totaltime2) {
         scaleGif(99.8);  // parameter is a percentage to scale the gif each time this is run
+        int center = 960;
         
-        // movie image toward center of screen (width)
-        if (x > screenHorizontalCenter) {
-            x -= incrementTowardCenter;
-        } else if (x < screenHorizontalCenter) {
-            x += incrementTowardCenter;
+        cout << "x: " << x << '\n';
+        
+        // move image toward center of screen (width)
+        if (x > 960) {
+            float diff = x - center;
+            float percentage = (diff / 960);
+            cout << "percentage: " << percentage << '\n';
+            x -= (incrementTowardCenter * percentage);
+        } else if (x < 960) {
+            float diff2 = (center - x / 1920);
+            float percentage = diff2 / 1920;
+            cout << "percentage: " << percentage << '\n';
+            x += (incrementTowardCenter * percentage);
         } else {
             // nothing
         }
         
-        // movie image toward center of screen (height)
-        if (y > horizonLine) {
-            y -= incrementTowardCenter;
-        } else if (y < horizonLine) {
-            y += incrementTowardCenter;
-        } else {
-            // nothing
-        }
+        cout << "x after: " << x << '\n' << '\n';
+        // move image toward center of screen (height)
+//        if (y > screenVerticalCenter) {
+//            y -= incrementTowardCenter;
+//        } else if (y < screenVerticalCenter) {
+//            y += incrementTowardCenter;
+//        } else {
+//            // nothing
+//        }
         
         savedTime2 = currentTime;
     }

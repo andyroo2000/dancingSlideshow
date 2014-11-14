@@ -10,25 +10,12 @@ void ofApp::setup(){
     ofSetRectMode(OF_RECTMODE_CENTER); //set rectangle mode to the center
     screenWidth = ofGetScreenWidth();
     screenHeight = ofGetScreenHeight();
-    screenVerticalCenter = screenWidth / 2;
-    screenHorizontalCenter = screenHeight / 2;
+    screenVerticalCenter = 960;
+    screenHorizontalCenter = 540;
     
-    gif[0] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[1] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[2] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[3] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[4] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[5] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[6] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[7] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[8] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[9] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[10] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[11] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[12] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[13] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[14] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    gif[15] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    setupNewImages(15);
+    
+
     
     setupAllGifs();
 }
@@ -146,12 +133,13 @@ void ofApp::setNewRandomImage(int index) {
 void ofApp::launchNewImage() {
     currentTimeMain = ofGetElapsedTimeMillis();
     int passedTime = currentTimeMain - savedTimeMain;
+    int screenHeightCenter = ofGetScreenHeight() / 2;
 
     if (passedTime > totalTimeMain) {
         imageIndex.push_back(index);
         delete gif[index];
         getImagePaths();  // refresh the file list and numOfImages
-        gif[index] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+        gif[index] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), screenHeightCenter);
         
 //        cout << "index: " << index << '\n';
 //        cout << "countToMaxImages: " << countToMaxImages << '\n';
@@ -178,6 +166,13 @@ void ofApp::launchNewImage() {
 //    cout << '\n';
 
     
+}
+
+//--------------------------------------------------------------
+void ofApp::setupNewImages(int numberOfImages) {
+    for (int i = 0; i < numberOfImages; i++) {
+        gif[i] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    }
 }
 
 

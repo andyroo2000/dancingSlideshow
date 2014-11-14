@@ -41,7 +41,7 @@ public:
     int screenVerticalCenter = 0;
     int screenHorizontalCenter = 0;
     int horizonLine = 0;
-    int incrementTowardCenter = 1;  // amount of pixels to move toward the center of the screen in each update
+    float incrementTowardCenter = 0.6;  // amount of pixels to move toward the center of the screen in each update
     
     // timer variables
     int savedTime = 0;
