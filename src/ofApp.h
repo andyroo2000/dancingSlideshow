@@ -37,7 +37,7 @@ public:
     int currentTimeMain = 0;
     
     int index = 0;
-    int indexUpperLimit = 15;
+    int indexUpperLimit = 14;
     
     float screenWidth = 0;
     float screenHeight = 0;
@@ -50,5 +50,5 @@ public:
     vector<int>imageIndex;
     
 private:
-    AnimatedGif *gif[14];
+    AnimatedGif *gif[16];
 };

@@ -27,6 +27,8 @@ void ofApp::setup(){
     gif[11] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
     gif[12] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
     gif[13] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[14] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
+    gif[15] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
     
     setupAllGifs();
 }
@@ -146,8 +148,14 @@ void ofApp::launchNewImage() {
 
     if (passedTime > totalTimeMain) {
         imageIndex.push_back(index);
+        delete gif[index];
+        getImagePaths();  // refresh the file list and numOfImages
+        gif[index] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
         
-        if (countToMaxImages < numOfImagesToDisplay) {
+        cout << "index: " << index << '\n';
+        cout << "countToMaxImages: " << countToMaxImages << '\n';
+        
+        if (countToMaxImages <= numOfImagesToDisplay) {
             countToMaxImages++;
         } else {
             imageIndex.erase(imageIndex.begin());  // erase first spot in vector
@@ -162,11 +170,11 @@ void ofApp::launchNewImage() {
     }
     
     // print contents of vector to console
-//    int vectorSize = imageIndex.size();
-//    for (int i = 0; i < vectorSize; i++) {
-//        cout << imageIndex[i] << '\n';
-//    }
-//    cout << '\n';
+    int vectorSize = imageIndex.size();
+    for (int i = 0; i < vectorSize; i++) {
+        cout << imageIndex[i] << '\n';
+    }
+    cout << '\n';
 
     
 }
