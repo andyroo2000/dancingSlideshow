@@ -18,6 +18,14 @@ void ofApp::setup(){
     gif[4] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
     gif[5] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
     gif[6] =new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
+    gif[7] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
+    gif[8] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
+    gif[9] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
+    gif[10] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
+    gif[11] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
+    gif[12] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
+    gif[13] =new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(ofGetScreenWidth()), ofRandom(screenVerticalCenter, ofGetScreenHeight()));
+ 
     
     setupAllGifs();
 }

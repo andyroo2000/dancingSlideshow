@@ -27,7 +27,7 @@ public:
     void getPercentOfNumber(float _number, float _percentage);
     
     int numOfImages = 0;
-    int numOfImagesToDisplay = 7;
+    int numOfImagesToDisplay = 14;
     
     float screenVerticalCenter = 0;
     float screenHorizontalCenter = 0;
@@ -37,5 +37,5 @@ public:
     vector<string>imagePaths;
     
 private:
-    AnimatedGif *gif[7];
+    AnimatedGif *gif[14];
 };
