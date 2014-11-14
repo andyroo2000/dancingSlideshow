@@ -15,8 +15,9 @@ AnimatedGif::AnimatedGif(string _imagePath, float _x, float _y)
 void AnimatedGif::setup() {
     currentTime = ofGetElapsedTimeMillis();
     savedTime = currentTime;
-//    screenVerticalCenter = ofGetScreenHeight() / 2;
-//    screenHorizontalCenter = ofGetScreenWidth() / 2;
+    screenHorizontalCenter = ofGetScreenWidth() / 2;
+    screenVerticalCenter = ofGetScreenHeight() / 2;
+    horizonLine = screenVerticalCenter - (.1 * ofGetScreenHeight());
 }
 
 void AnimatedGif::update() {
@@ -36,20 +37,24 @@ void AnimatedGif::update() {
     int passedTime2 = currentTime - savedTime2;
     
     if (passedTime2 > totaltime2) {
-        scaleGif(98);  // parameter is a percentage to scale the gif each time this is run
+        scaleGif(99.8);  // parameter is a percentage to scale the gif each time this is run
         
         // movie image toward center of screen (width)
         if (x > screenHorizontalCenter) {
             x -= incrementTowardCenter;
-        } else {
+        } else if (x < screenHorizontalCenter) {
             x += incrementTowardCenter;
+        } else {
+            // nothing
         }
         
         // movie image toward center of screen (height)
-        if (y > screenHorizontalCenter) {
+        if (y > horizonLine) {
             y -= incrementTowardCenter;
-        } else {
+        } else if (y < horizonLine) {
             y += incrementTowardCenter;
+        } else {
+            // nothing
         }
         
 //        x = 10;
