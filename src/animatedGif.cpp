@@ -1,6 +1,7 @@
 //  animatedGif.cpp
 //  slideshowDancing
 
+#include "ofApp.h"
 #include "animatedGif.h"
 
 AnimatedGif::AnimatedGif(string _imagePath, float _x, float _y)
@@ -14,6 +15,8 @@ AnimatedGif::AnimatedGif(string _imagePath, float _x, float _y)
 void AnimatedGif::setup() {
     currentTime = ofGetElapsedTimeMillis();
     savedTime = currentTime;
+//    screenVerticalCenter = ofGetScreenHeight() / 2;
+//    screenHorizontalCenter = ofGetScreenWidth() / 2;
 }
 
 void AnimatedGif::update() {
@@ -34,6 +37,22 @@ void AnimatedGif::update() {
     
     if (passedTime2 > totaltime2) {
         scaleGif(98);  // parameter is a percentage to scale the gif each time this is run
+        
+        // movie image toward center of screen (width)
+        if (x > screenHorizontalCenter) {
+            x -= incrementTowardCenter;
+        } else {
+            x += incrementTowardCenter;
+        }
+        
+        // movie image toward center of screen (height)
+        if (y > screenHorizontalCenter) {
+            y -= incrementTowardCenter;
+        } else {
+            y += incrementTowardCenter;
+        }
+        
+//        x = 10;
         savedTime2 = currentTime;
     }
 }

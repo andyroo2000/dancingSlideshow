@@ -37,6 +37,10 @@ public:
     float incrementAmount = 600;  // size of offset for each image in spritesheet
     int numberOfFrames = 6;       // number of frames in the gif
     
+    int screenVerticalCenter = ofGetScreenHeight() / 2;
+    int screenHorizontalCenter = ofGetScreenWidth() / 2;
+    int incrementTowardCenter = 4;  // amount of pixels to move toward the center of the screen in each update
+    
     // timer variables
     int savedTime = 0;
     int totalTime = 200;        // time for each frame of gif in milliseconds
