@@ -28,6 +28,7 @@ public:
     
     int numOfImages = 0;
     int numOfImagesToDisplay = 14;
+    int countToMaxImages = 0;
     
     
     // timer variables

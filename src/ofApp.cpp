@@ -147,6 +147,12 @@ void ofApp::launchNewImage() {
     if (passedTime > totalTimeMain) {
         imageIndex.push_back(index);
         
+        if (countToMaxImages < numOfImagesToDisplay) {
+            countToMaxImages++;
+        } else {
+            imageIndex.erase(imageIndex.begin());  // erase first spot in vector
+        }
+        
         if (index < indexUpperLimit) {
             index++;
         } else {
@@ -154,6 +160,13 @@ void ofApp::launchNewImage() {
         }
         savedTimeMain = currentTimeMain;
     }
+    
+    // print contents of vector to console
+//    int vectorSize = imageIndex.size();
+//    for (int i = 0; i < vectorSize; i++) {
+//        cout << imageIndex[i] << '\n';
+//    }
+//    cout << '\n';
 
     
 }
