@@ -57,12 +57,12 @@ void AnimatedGif::update() {
             // nothing
         }
         
-//        x = 10;
         savedTime2 = currentTime;
     }
 }
 
 void AnimatedGif::draw() {
+    fadeIn();
     myImage.drawSubsection(x, y, w, h, xPositionOfSprite, yPositionOfSprite, sourceWidth, sourceHeight);
 }
 
@@ -92,5 +92,14 @@ void AnimatedGif::scaleGif(float _percentage) {
     h *= _percentage * .01;
 }
 
+void AnimatedGif::fadeIn() {
+    ofEnableAlphaBlending();
+    newAlpha = oldAlpha + 3;  // higher numbers will make the fade happen faster
+    
+    if (newAlpha > 255) {newAlpha = 255;}
+    
+    ofSetColor(255,255,255,newAlpha);
+    oldAlpha = newAlpha;
+}
 
 

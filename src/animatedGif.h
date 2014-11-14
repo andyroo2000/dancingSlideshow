@@ -20,9 +20,10 @@ public:
     
     void updateValueByPercentage(float &_number, float _percentage);
     void scaleGif(float _percentage);
+    void fadeIn();
     
     // variables
-    ofImage myImage;  // variable in object to load each spritesheet
+    ofImage myImage;  // the sprite sheet for each instance of this class
     
     // draw gif parameters
     float x = 0;                    // x-position of gif
@@ -52,8 +53,12 @@ public:
     int totaltime2= 5;              // time between each frame that scales and moves the image backward
     int currentTime2 = 0;
     
+    // fadein variables
+    int oldAlpha = 0;
+    int newAlpha = 0;
+
     
-    // constructor
+    // CONSTRUCTOR
     AnimatedGif(string _imagePath, float _x, float _y);
     
 private:

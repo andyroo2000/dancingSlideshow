@@ -153,8 +153,8 @@ void ofApp::launchNewImage() {
         getImagePaths();  // refresh the file list and numOfImages
         gif[index] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
         
-        cout << "index: " << index << '\n';
-        cout << "countToMaxImages: " << countToMaxImages << '\n';
+//        cout << "index: " << index << '\n';
+//        cout << "countToMaxImages: " << countToMaxImages << '\n';
         
         if (countToMaxImages <= numOfImagesToDisplay) {
             countToMaxImages++;
@@ -170,12 +170,12 @@ void ofApp::launchNewImage() {
         savedTimeMain = currentTimeMain;
     }
     
-    // print contents of vector to console
-    int vectorSize = imageIndex.size();
-    for (int i = 0; i < vectorSize; i++) {
-        cout << imageIndex[i] << '\n';
-    }
-    cout << '\n';
+    // print contents of imageIndex deque to the console
+//    int vectorSize = imageIndex.size();
+//    for (int i = 0; i < vectorSize; i++) {
+//        cout << imageIndex[i] << '\n';
+//    }
+//    cout << '\n';
 
     
 }
