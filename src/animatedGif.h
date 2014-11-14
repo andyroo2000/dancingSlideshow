@@ -27,8 +27,8 @@ public:
     // draw gif parameters
     float x = 0;                    // x-position of gif
     float y = 0;                    // y-position of gif
-    float w = 600;                  // width of gif
-    float h = 600;                  // height of gif
+    float w = 1200;                  // width of gif
+    float h = 1200;                  // height of gif
     float xPositionOfSprite = 0;      // x-position of source
     float yPositionOfSprite = 0;      // y-position of source
     float sourceWidth = 600;        // width of source
