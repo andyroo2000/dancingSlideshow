@@ -27,8 +27,8 @@ public:
     // draw gif parameters
     float x = 0;                    // x-position of gif
     float y = 0;                    // y-position of gif
-    float w = 1200;                  // width of gif
-    float h = 1200;                  // height of gif
+    float w = 1400;                  // width of gif
+    float h = 1400;                  // height of gif
     float xPositionOfSprite = 0;      // x-position of source
     float yPositionOfSprite = 0;      // y-position of source
     float sourceWidth = 600;        // width of source
@@ -44,7 +44,7 @@ public:
     
     // timer 2 variables
     int savedTime2 = 0;
-    int totaltime2= 3000;       // time between each frame that scales and moves the image backward
+    int totaltime2= 200;       // time between each frame that scales and moves the image backward
     int currentTime2 = 0;
     
     

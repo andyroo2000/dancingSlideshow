@@ -33,7 +33,7 @@ void AnimatedGif::update() {
     int passedTime2 = currentTime - savedTime2;
     
     if (passedTime2 > totaltime2) {
-        scaleGif(90);  // parameter is a percentage to scale the gif each time this is run
+        scaleGif(98);  // parameter is a percentage to scale the gif each time this is run
         savedTime2 = currentTime;
     }
 }
