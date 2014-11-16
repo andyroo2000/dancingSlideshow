@@ -16,9 +16,6 @@ public:
     void draw();
     void setValueX(int _x);
     void setImagePath(string _imagePath);
-    void setDrawSubsectionParameters(float _x, float _y, float _w, float _h, float _xPositionOfSprite, float _yPositionOfSprite, float _sourceWidth, float _sourceHeight);
-    
-    void updateValueByPercentage(float &_number, float _percentage);
     void scaleGif(float _percentage);
     void fadeIn();
     
@@ -28,30 +25,20 @@ public:
     // draw gif parameters
     float x = 0;                    // x-position of gif
     float y = 0;                    // y-position of gif
-    float w = 2400;                 // width of gif
-    float h = 2400;                 // height of gif
+    float w = 600;                 // desired width of gif on screen
+    float h = 600;                 // desired height of gif on screen
     float xPositionOfSprite = 0;    // x-position of source
     float yPositionOfSprite = 0;    // y-position of source
     float sourceWidth = 600;        // width of source
     float sourceHeight = 600;       // height of source
     
-    float incrementAmount = 600;    // size of offset for each image in spritesheet
+    float incrementAmount = 600;    // width of each image in spritesheet
     int numberOfFrames = 6;         // number of frames in the gif
-    
-    int screenVerticalCenter = 0;
-    int screenHorizontalCenter = 0;
-    int horizonLine = 0;
-    float incrementTowardCenter = 0.6;  // amount of pixels to move toward the center of the screen in each update
     
     // timer variables
     int savedTime = 0;
     int totalTime = 200;            // time for each frame of gif in milliseconds
     int currentTime = 0;
-    
-    // timer 2 variables
-    int savedTime2 = 0;
-    int totaltime2= 5;              // time between each frame that scales and moves the image backward
-    int currentTime2 = 0;
     
     // fadein variables
     int oldAlpha = 0;

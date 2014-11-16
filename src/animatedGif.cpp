@@ -9,21 +9,17 @@ AnimatedGif::AnimatedGif(string _imagePath, float _x, float _y)
     x = _x;
     y = _y;
     myImage.loadImage(_imagePath);
-    
 }
 
 void AnimatedGif::setup() {
-    currentTime = ofGetElapsedTimeMillis();
-    savedTime = currentTime;
-    screenHorizontalCenter = ofGetScreenWidth() / 2;
-    screenVerticalCenter = ofGetScreenHeight() / 2;
-    horizonLine = screenVerticalCenter - (.15 * ofGetScreenHeight());
+
 }
 
 void AnimatedGif::update() {
     currentTime = ofGetElapsedTimeMillis();
     int passedTime = currentTime - savedTime;
     
+    // move from left to right over the spritesheet revealing a new frame with each click of the timer
     if (passedTime > totalTime) {
         xPositionOfSprite += incrementAmount;
         
@@ -32,42 +28,6 @@ void AnimatedGif::update() {
         }
         
         savedTime = currentTime;
-    }
-    
-    int passedTime2 = currentTime - savedTime2;
-    
-    if (passedTime2 > totaltime2) {
-        scaleGif(99.8);  // parameter is a percentage to scale the gif each time this is run
-        int center = 960;
-        
-        cout << "x: " << x << '\n';
-        
-        // move image toward center of screen (width)
-        if (x > 960) {
-            float diff = x - center;
-            float percentage = (diff / 960);
-            cout << "percentage: " << percentage << '\n';
-            x -= (incrementTowardCenter * percentage);
-        } else if (x < 960) {
-            float diff2 = (center - x / 1920);
-            float percentage = diff2 / 1920;
-            cout << "percentage: " << percentage << '\n';
-            x += (incrementTowardCenter * percentage);
-        } else {
-            // nothing
-        }
-        
-        cout << "x after: " << x << '\n' << '\n';
-        // move image toward center of screen (height)
-//        if (y > screenVerticalCenter) {
-//            y -= incrementTowardCenter;
-//        } else if (y < screenVerticalCenter) {
-//            y += incrementTowardCenter;
-//        } else {
-//            // nothing
-//        }
-        
-        savedTime2 = currentTime;
     }
 }
 
@@ -80,22 +40,7 @@ void AnimatedGif::setImagePath(string _imagePath) {
     myImage.loadImage(_imagePath);
 }
 
-void AnimatedGif::setDrawSubsectionParameters(float _x, float _y, float _w, float _h, float _xPositionOfSprite, float _yPositionOfSprite, float _sourceWidth, float _sourceHeight) {
-    x = _x;
-    y = _y;
-    w = _w;
-    h = _h;
-    xPositionOfSprite = _xPositionOfSprite;
-    yPositionOfSprite = _yPositionOfSprite;
-    sourceHeight = _sourceHeight;
-    sourceWidth = _sourceWidth;
-}
-
-
-void AnimatedGif::updateValueByPercentage(float &_number, float _percentage) {
-    _number = _number * (_percentage * .01);
-}
-
+// this function isn't being used, but you could use this to scale the gifs individually
 void AnimatedGif::scaleGif(float _percentage) {
     // scale gif by percentage
     w *= _percentage * .01;

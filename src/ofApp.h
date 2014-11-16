@@ -19,6 +19,7 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     void setupNewImages(int numberOfImages);
+    void drawMovie();
     
     void setupAllGifs();
     void drawAllGifs();
@@ -28,17 +29,17 @@ public:
     void launchNewImage();
     
     int numOfImages = 0;
-    int numOfImagesToDisplay = 15;
+    int numOfImagesToDisplay = 10;
     int countToMaxImages = 0;
     
     
     // timer variables
     int savedTimeMain = 0;
-    int totalTimeMain = 2500;  // time to wait before launching a new image
+    int totalTimeMain = 4000;  // time to wait before launching a new image (in milliseconds)
     int currentTimeMain = 0;
     
     int index = 0;
-    int indexUpperLimit = 15;
+    int indexUpperLimit = 10;
     
     float screenWidth = 0;
     float screenHeight = 0;
@@ -50,7 +51,6 @@ public:
     vector<string>imagePaths;
     deque<int> imageIndex;
 
-    
 private:
-    AnimatedGif *gif[31];
+    AnimatedGif *gif[11];
 };

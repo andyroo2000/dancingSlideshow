@@ -3,20 +3,15 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    // ofSetDataPathRoot("../Resources/data/");  // this helps make it possible to export with resources
     ofSeedRandom();
     getImagePaths();
-    
+
     // Get the center point of the screen for placing new images
     ofSetRectMode(OF_RECTMODE_CENTER); //set rectangle mode to the center
     screenWidth = ofGetScreenWidth();
     screenHeight = ofGetScreenHeight();
-    screenVerticalCenter = 960;
-    screenHorizontalCenter = 540;
-    
-    setupNewImages(15);
-    
 
-    
     setupAllGifs();
 }
 
@@ -24,6 +19,7 @@ void ofApp::setup(){
 void ofApp::update(){
     launchNewImage();
     updateAllGifs();
+    
 }
 
 //--------------------------------------------------------------
@@ -110,7 +106,7 @@ void ofApp::drawAllGifs() {
 
 //--------------------------------------------------------------
 void ofApp::getImagePaths() {
-    numOfImages = imageDirectory.listDir("images");
+    numOfImages = imageDirectory.listDir("images");  // this is currently set to an images directory inside the bin/data, but you can set this to any folder
     
     for (int i = 0; i < numOfImages; i++) {
         imagePaths.push_back(imageDirectory.getPath(i));
@@ -133,17 +129,16 @@ void ofApp::setNewRandomImage(int index) {
 void ofApp::launchNewImage() {
     currentTimeMain = ofGetElapsedTimeMillis();
     int passedTime = currentTimeMain - savedTimeMain;
-    int screenHeightCenter = ofGetScreenHeight() / 2;
 
     if (passedTime > totalTimeMain) {
         imageIndex.push_back(index);
         delete gif[index];
         getImagePaths();  // refresh the file list and numOfImages
-        gif[index] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), screenHeightCenter);
+        float width = ofRandom(ofGetScreenWidth());
+        float height = ofRandom(ofGetScreenHeight());
         
-//        cout << "index: " << index << '\n';
-//        cout << "countToMaxImages: " << countToMaxImages << '\n';
-        
+        gif[index] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(ofGetScreenHeight()));
+
         if (countToMaxImages <= numOfImagesToDisplay) {
             countToMaxImages++;
         } else {
@@ -157,24 +152,4 @@ void ofApp::launchNewImage() {
         }
         savedTimeMain = currentTimeMain;
     }
-    
-    // print contents of imageIndex deque to the console
-//    int vectorSize = imageIndex.size();
-//    for (int i = 0; i < vectorSize; i++) {
-//        cout << imageIndex[i] << '\n';
-//    }
-//    cout << '\n';
-
-    
 }
-
-//--------------------------------------------------------------
-void ofApp::setupNewImages(int numberOfImages) {
-    for (int i = 0; i < numberOfImages; i++) {
-        gif[i] = new AnimatedGif(imagePaths[ofRandom(numOfImages)], ofRandom(screenWidth), ofRandom(screenVerticalCenter, screenHeight));
-    }
-}
-
-
-
-
